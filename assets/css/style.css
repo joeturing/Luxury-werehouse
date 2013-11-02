@@ -171,6 +171,9 @@ strong { font-weight: bold; }
 .what-we-do {
     margin-top: 50px;
 }
+.alineado-a-izquierda{
+ text-align: justify;   
+}
 
 .what-we-do .service {
     padding-bottom: 23px;
