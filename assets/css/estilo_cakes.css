@@ -1,0 +1,493 @@
+/*
+Theme created for use with Sequence.js (http://www.sequencejs.com/)
+
+Theme: Split Slide
+Version: 1.3
+Theme Author: Ian Lunn @IanLunn
+Author URL: http://www.ianlunn.co.uk/
+Theme URL: http://www.sequencejs.com/themes/split-slide/
+
+This is a PREMIUM theme and is available under the following license:
+http://sequencejs.com/developers/license-information/#premium
+
+Sequence.js and its dependencies are (c) Ian Lunn Design 2012 unless otherwise stated.
+*/
+/* CSS RESET - http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 */
+/* line 14, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/partials/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+/* line 24, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/partials/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 27, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/partials/reset.scss */
+body {
+  line-height: 1; }
+
+/* line 30, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/partials/reset.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 33, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/partials/reset.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 37, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/partials/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/* line 41, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/partials/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* !CSS RESET */
+/* prefix declarations */
+/* THEME STYLES */
+/* line 33, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+#sequence-theme {
+  max-width: 1280px;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif; }
+
+/* line 44, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+#sequence.sequence-fallback .product1 {
+  /* background color for frame1 when using the fallback theme */
+  background-color: #C3D2F3; }
+/* line 48, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+#sequence.sequence-fallback .product2 {
+  /* background color for frame2 when using the fallback theme */
+  background-color: #FF9933; }
+/* line 52, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+#sequence.sequence-fallback .product3 {
+  /* background color for frame3 when using the fallback theme */
+  background-color: #FFCC33; }
+/* line 56, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+#sequence.sequence-fallback > .sequence-canvas li {
+  opacity: 1 !important;
+  /* in fallback mode, frames should always have an opacity of 1 */ }
+
+/* line 61, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+#sequence {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%; }
+  /* line 67, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence > .sequence-canvas {
+    height: 100%;
+    width: 100%; }
+  /* line 72, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence > .sequence-canvas > li {
+    /* make each Sequence frame 100% of the container */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1; }
+  /* line 79, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence > .sequence-canvas li > * {
+    /* make all animated elements position absolute so their left/right/top/bottom can be manipulated */
+    position: absolute; }
+  /* line 83, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .sequence-pagination {
+    bottom: 2.5%;
+    right: 2.5%;
+    position: absolute;
+    z-index: 100; }
+  /* line 90, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .sequence-pagination li {
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+    /* fix for IE7 */ }
+  /* line 96, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .sequence-pagination li img {
+    width: 60px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+    /* reduce the size of pagination images when not active */ }
+  /* line 101, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .sequence-pagination li.current img {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    /* increase the size of pagination images when active */ }
+  /* line 106, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .sequence-next,
+  #sequence .sequence-prev {
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    /* position the top of the next/previous buttons in the vertical center of the Sequence theme */
+    margin-top: -40px;
+    /* move the next/previous buttons back up by half their height to vertically center the middle of them */
+    opacity: 0.8;
+    /* 80% opacity when inactive (not being hovered over) */
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -ms-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+    /* only animate opacity to prevent buttons from animating on resize */ }
+  /* line 118, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .sequence-next:hover,
+  #sequence .sequence-prev:hover {
+    opacity: 1;
+    /* 100% opacity when inactive (not being hovered over) */
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -ms-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+    /* only animate opacity to prevent buttons from animating on resize */ }
+  /* line 124, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .sequence-next {
+    right: 2.5%; }
+  /* line 128, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .sequence-prev {
+    left: 2.5%; }
+  /* line 132, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence > .sequence-canvas {
+    /* ANIMATION STYLES */ }
+    /* line 134, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .split.top,
+    #sequence > .sequence-canvas .split.bottom {
+      /* the top and bottom of the split in all frames */
+      height: 100%;
+      width: 100%; }
+    /* line 139, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas > li:nth-child(1) .split.top path {
+      /* color of first top split */
+      fill: #C3D2F3; }
+    /* line 143, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas > li:nth-child(1) .split.bottom path {
+      /* color of first bottom split */
+      fill: #EF485A; }
+    /* line 147, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas > li:nth-child(2) .split.top path {
+      /* color of second top split */
+      fill: #FF9933; }
+    /* line 151, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas > li:nth-child(2) .split.bottom path {
+      /* color of second bottom split */
+      fill: #663399; }
+    /* line 155, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas > li:nth-child(3) .split.top path {
+      /* color of third top split */
+      fill: #FFCC33; }
+    /* line 159, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas > li:nth-child(3) .split.bottom path {
+      /* color of third bottom split */
+      fill: #339966; }
+    /* line 164, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .split.top {
+      /* starting position for the top of the split */
+      top: -50%;
+      left: -50%; }
+    /* line 169, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .split.bottom {
+      /* starting position for the bottom of the split */
+      bottom: -50%;
+      right: -50%; }
+    /* line 174, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .animate-in .split.top {
+      /* animate-in position for the top of the split */
+      top: 0;
+      left: 0;
+      -webkit-transition-duration: 0.3s;
+      -moz-transition-duration: 0.3s;
+      -ms-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      /* animate from start to animate-in over .3seconds */ }
+    /* line 180, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .animate-in .split.bottom {
+      /* animate-in position for the bottom of the split */
+      bottom: 0;
+      right: 0;
+      -webkit-transition-duration: 0.3s;
+      -moz-transition-duration: 0.3s;
+      -ms-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      /* animate from start to animate-in over .3seconds */ }
+    /* line 186, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .animate-out .split.top {
+      /* animate-out position for the top of the split */
+      top: -50%;
+      left: -50%;
+      -webkit-transition-duration: 0.3s;
+      -moz-transition-duration: 0.3s;
+      -ms-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      /* animate from animate-in to animate-out over .3seconds */
+      -webkit-transition-delay: 0.3s;
+      -moz-transition-delay: 0.3s;
+      -ms-transition-delay: 0.3s;
+      -o-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+      /* wait for the new frame to animate-in before hiding the current one */ }
+    /* line 193, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .animate-out .split.bottom {
+      /* animate-out position for the bottom of the split */
+      bottom: -50%;
+      right: -50%;
+      -webkit-transition-duration: 0.3s;
+      -moz-transition-duration: 0.3s;
+      -ms-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      /* animate from animate-in to animate-out over .3seconds */
+      -webkit-transition-delay: 0.3s;
+      -moz-transition-delay: 0.3s;
+      -ms-transition-delay: 0.3s;
+      -o-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+      /* wait for the new frame to animate-in before hiding the current one */ }
+    /* line 200, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas h2 {
+      color: white;
+      font-size: 1.4em;
+      line-height: 140%;
+      text-align: center;
+      opacity: 0;
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      z-index: 10;
+      -webkit-transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+      -o-transform: scale(0.5);
+      transform: scale(0.5); }
+    /* line 213, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .product {
+      /* all products */
+      opacity: 0;
+      text-align: center;
+      top: 25%;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      -webkit-transform: scale(0.6);
+      -moz-transform: scale(0.6);
+      -ms-transform: scale(0.6);
+      -o-transform: scale(0.6);
+      transform: scale(0.6); }
+    /* line 223, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .product.left {
+      /* the product on the left */
+      left: 0; }
+    /* line 227, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .product.right {
+      /* the product on the right */
+      right: 0; }
+    /* line 232, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .product.left,
+    #sequence > .sequence-canvas .product.right {
+      /*left and right products */
+      z-index: 10;
+      width: 50%;
+      top: 10%; }
+    /* line 239, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .product.left img,
+    #sequence > .sequence-canvas .product.right img {
+      /* left and right product images */
+      cursor: pointer;
+      max-width: 280px;
+      width: 36%; }
+    /* line 245, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .product.main img {
+      /* the main product image (in the center) */
+      max-width: 337px;
+      max-height: 346px;
+      width: 56%; }
+    /* line 252, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .animate-in h2,
+    #sequence > .sequence-canvas .animate-in .product {
+      /* animate-in for all products and title */
+      opacity: 1;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      -ms-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      /* animate from start to animate-in over .2seconds */
+      -webkit-transition-delay: 0.4s;
+      -moz-transition-delay: 0.4s;
+      -ms-transition-delay: 0.4s;
+      -o-transition-delay: 0.4s;
+      transition-delay: 0.4s;
+      /* wait .4s before animating in */ }
+    /* line 259, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .animate-in .product.main {
+      /* animate-in for main product (in the center) */
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      -ms-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      /* animate from start to animate-in over .2seconds */
+      -webkit-transition-delay: 0.4s;
+      -moz-transition-delay: 0.4s;
+      -ms-transition-delay: 0.4s;
+      -o-transition-delay: 0.4s;
+      transition-delay: 0.4s;
+      /* wait .4s before animating in */ }
+    /* line 265, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .animate-in .product.left,
+    #sequence > .sequence-canvas .animate-in .product.right {
+      /* animate-in for left and right products */
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      -ms-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      /* animate from start to animate-in over .2seconds */
+      -webkit-transition-delay: 0.6s;
+      -moz-transition-delay: 0.6s;
+      -ms-transition-delay: 0.6s;
+      -o-transition-delay: 0.6s;
+      transition-delay: 0.6s;
+      /* wait .6s before animating in */ }
+    /* line 270, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .animate-in .product.right {
+      /* animate-in for right product */
+      -webkit-transition-delay: 0.8s;
+      -moz-transition-delay: 0.8s;
+      -ms-transition-delay: 0.8s;
+      -o-transition-delay: 0.8s;
+      transition-delay: 0.8s;
+      /* wait .8s before animating in */ }
+    /* line 275, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence > .sequence-canvas .animate-out h2,
+    #sequence > .sequence-canvas .animate-out .product {
+      /* animate-out for all products and title */
+      opacity: 0;
+      -webkit-transition-delay: 0.5s;
+      -moz-transition-delay: 0.5s;
+      -ms-transition-delay: 0.5s;
+      -o-transition-delay: 0.5s;
+      transition-delay: 0.5s;
+      /* wait .5s before animating out */ }
+
+@media only screen and (max-width: 1020px) {
+  /* when the viewport is no wider than 1020px */
+  /* line 283, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence-theme {
+    height: 550px; }
+    /* line 286, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence-theme .product.main img {
+      width: 33%; } }
+@media only screen and (max-width: 950px) {
+  /* when the viewport is no wider than 950px */
+  /* line 294, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .sequence-pagination {
+    /* only show pagination above 950px */
+    display: none; }
+  /* line 298, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .product.main img {
+    width: 36%; } }
+@media only screen and (max-width: 850px) {
+  /* when the viewport is no wider than 850px */
+  /* line 305, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .product.main img {
+    width: 41%; } }
+@media only screen and (max-width: 720px) {
+  /* when the viewport is no wider than 720px */
+  /* line 312, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence .product.main img {
+    width: 46%; }
+    /* line 316, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence .product.main img .product.left img,
+    #sequence .product.main img .product.right img {
+      width: 46%; } }
+@media only screen and (max-width: 650px) {
+  /* when the viewport is no wider than 650px */
+  /* line 324, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence-theme {
+    height: 500px; } }
+@media only screen and (max-width: 580px) {
+  /* when the viewport is no wider than 580px */
+  /* line 330, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence-theme {
+    height: 450px; }
+    /* line 334, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence-theme .sequence-next,
+    #sequence-theme .sequence-prev {
+      height: 50px;
+      margin-top: -25px; } }
+@media only screen and (max-width: 500px) {
+  /* when the viewport is no wider than 500px */
+  /* line 342, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence-theme {
+    height: 400px; } }
+@media only screen and (max-width: 480px) {
+  /* when the viewport is no wider than 480px */
+  /* line 348, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence-theme {
+    height: 350px; } }
+@media only screen and (max-width: 320px) {
+  /* when the viewport is no wider than 320px */
+  /* line 354, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+  #sequence-theme {
+    height: 360px; }
+    /* line 357, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence-theme .product.main img {
+      width: 55%; }
+    /* line 362, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence-theme .product.left img,
+    #sequence-theme .product.right img {
+      width: 60%; }
+    /* line 367, /Users/Ian/Sites/sequence-themes/themes/split-slide/scss/sequencejs-theme.split-slide.scss */
+    #sequence-theme .product.main,
+    #sequence-theme .animate-in .product.main {
+      top: 25%; } }
